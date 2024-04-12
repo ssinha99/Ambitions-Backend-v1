@@ -182,8 +182,10 @@ app.get("/insert", async (req, res) => {
   res.status(200).send({ message: "Inserted Succesfully!" });
 });
 
-app.listen(3000, () => {
-  console.log("Running on port 3000");
+
+const PORT = process.env.port || 3000
+app.listen(PORT, () => {
+  console.log("Running on port" + PORT);
 });
 
 app.use("/.netlify/functions/index", router);
